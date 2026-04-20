@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 
@@ -12,11 +14,15 @@ export function CtaSection() {
           Join thousands of businesses that trust Babaerp to manage their operations. Start your free trial today.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button className="rounded-full bg-foreground text-background hover:bg-foreground/90 px-6 gap-2">
+          {/* <Button className="rounded-full bg-foreground text-background hover:bg-foreground/90 px-6 gap-2">
             Request Access
             <ArrowRight className="w-4 h-4" />
-          </Button>
-          <Button variant="outline" className="rounded-full px-6">
+          </Button> */}
+          <Button
+            variant="outline"
+            className="rounded-full px-6"
+            onClick={() => window.open('tel:0675303030')}
+          >
             Contact Sales
           </Button>
         </div>

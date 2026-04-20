@@ -54,7 +54,7 @@ export function Footer() {
                   href="mailto:mbatastore@gmail.com?subject=Inquiry from BabaERP Website"
                   className="text-background/70 hover:text-background transition-colors"
                 >
-                  mbatastore@gmail.com
+                  social@babaerp.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -63,7 +63,7 @@ export function Footer() {
               </div>
             </div>
           </div>
-          <div>
+          {/* <div>
             <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider">Support</h4>
             <nav className="space-y-1">
               <Link href="#" className="block text-sm text-background/70 hover:text-background transition-colors">
@@ -79,7 +79,7 @@ export function Footer() {
                 Contact Us
               </Link>
             </nav>
-          </div>
+          </div> */}
         </div>
 
         <div className="border-t border-background/20 pt-6 mt-6">

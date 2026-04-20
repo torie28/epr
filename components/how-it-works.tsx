@@ -189,7 +189,7 @@ function AnalyticsDiagram() {
         <div>
           <div className="flex items-center justify-between text-sm mb-1">
             <span className="text-muted-foreground">Sales</span>
-            <span className="font-medium">$248,000</span>
+            <span className="font-medium">Tsh 248,000</span>
           </div>
           <div className="h-2 bg-muted rounded-full overflow-hidden">
             <div className="h-full bg-accent rounded-full" style={{ width: "85%" }} />
@@ -198,7 +198,7 @@ function AnalyticsDiagram() {
         <div>
           <div className="flex items-center justify-between text-sm mb-1">
             <span className="text-muted-foreground">Purchases</span>
-            <span className="font-medium">$156,000</span>
+            <span className="font-medium">Tsh 156,000</span>
           </div>
           <div className="h-2 bg-muted rounded-full overflow-hidden">
             <div className="h-full bg-foreground/60 rounded-full" style={{ width: "65%" }} />
@@ -207,7 +207,7 @@ function AnalyticsDiagram() {
         <div>
           <div className="flex items-center justify-between text-sm mb-1">
             <span className="text-muted-foreground">POS Revenue</span>
-            <span className="font-medium">$89,500</span>
+            <span className="font-medium">Tsh 89,500</span>
           </div>
           <div className="h-2 bg-muted rounded-full overflow-hidden">
             <div className="h-full bg-accent/70 rounded-full" style={{ width: "45%" }} />
@@ -216,7 +216,7 @@ function AnalyticsDiagram() {
         <div>
           <div className="flex items-center justify-between text-sm mb-1">
             <span className="text-muted-foreground">Restaurant</span>
-            <span className="font-medium">$67,200</span>
+            <span className="font-medium">Tsh 67,200</span>
           </div>
           <div className="h-2 bg-muted rounded-full overflow-hidden">
             <div className="h-full bg-foreground/40 rounded-full" style={{ width: "35%" }} />

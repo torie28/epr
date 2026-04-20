@@ -90,7 +90,7 @@ export function DashboardMockup() {
                 <span className="text-sm text-muted-foreground">Revenue</span>
                 <DollarSign className="w-4 h-4 text-accent" />
               </div>
-              <div className="text-2xl font-semibold">$124,500</div>
+              <div className="text-2xl font-semibold">Tsh 124,500</div>
               <div className="flex items-center gap-1 text-xs text-accent mt-1">
                 <TrendingUp className="w-3 h-3" />
                 +12.5%
@@ -123,7 +123,7 @@ export function DashboardMockup() {
                 <span className="text-sm text-muted-foreground">Expenses</span>
                 <Calculator className="w-4 h-4 text-muted-foreground" />
               </div>
-              <div className="text-2xl font-semibold">$45,200</div>
+              <div className="text-2xl font-semibold">Tsh 45,200</div>
               <div className="flex items-center gap-1 text-xs text-muted-foreground mt-1">
                 -3.1%
               </div>
