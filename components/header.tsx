@@ -8,17 +8,50 @@ import { useState, useEffect } from "react"
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [visible, setVisible] = useState(false)
+  const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+      const scrollY = window.scrollY
+      setScrolled(scrollY > 20)
+
+      // Always visible in hero section (top 200px of page)
+      if (scrollY < 200) {
+        setVisible(true)
+        if (scrollTimeout) {
+          clearTimeout(scrollTimeout)
+          setScrollTimeout(null)
+        }
+      } else {
+        // Show on scroll, hide after delay when not in hero section
+        setVisible(true)
+
+        // Clear existing timeout
+        if (scrollTimeout) {
+          clearTimeout(scrollTimeout)
+        }
+
+        // Set new timeout to hide header after scrolling stops
+        const timeout = setTimeout(() => {
+          setVisible(false)
+        }, 1500) // Hide after 1.5 seconds of no scrolling
+
+        setScrollTimeout(timeout)
+      }
     }
+
     window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout)
+      }
+    }
+  }, [scrollTimeout])
 
   return (
-    <header className={`sticky top-4 z-50 mx-auto max-w-2xl py-3 px-6 flex items-center justify-between bg-background/80 backdrop-blur-md border rounded-full shadow-lg transition-all duration-300 ${scrolled ? 'shadow-xl bg-background/90' : ''}`}>
+    <header className={`sticky top-4 z-50 mx-auto max-w-2xl py-3 px-6 flex items-center justify-between bg-background/80 backdrop-blur-md border rounded-full shadow-lg transition-all duration-300 ${scrolled ? 'shadow-xl bg-background/90' : ''} ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
       <Link href="/" className="font-serif text-2xl font-medium tracking-tight">
         Babaerp
       </Link>
