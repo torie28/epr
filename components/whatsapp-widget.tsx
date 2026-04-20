@@ -110,8 +110,8 @@ export function WhatsAppWidget() {
                         key={module.id}
                         onClick={() => toggleModule(module.id)}
                         className={`flex items-center justify-between p-3 rounded-lg border transition-all text-left ${selectedModules.includes(module.id)
-                            ? "border-[#25D366] bg-[#25D366]/10"
-                            : "border-border hover:border-[#25D366]/50 hover:bg-muted/50"
+                          ? "border-[#25D366] bg-[#25D366]/10"
+                          : "border-border hover:border-[#25D366]/50 hover:bg-muted/50"
                           }`}
                       >
                         <div>
@@ -120,8 +120,8 @@ export function WhatsAppWidget() {
                         </div>
                         <div
                           className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all ${selectedModules.includes(module.id)
-                              ? "border-[#25D366] bg-[#25D366]"
-                              : "border-muted-foreground/30"
+                            ? "border-[#25D366] bg-[#25D366]"
+                            : "border-muted-foreground/30"
                             }`}
                         >
                           {selectedModules.includes(module.id) && (

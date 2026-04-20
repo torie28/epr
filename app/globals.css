@@ -219,7 +219,45 @@
     @apply border-border outline-ring/50;
   }
 
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+
+  /* Mobile-specific smooth scrolling optimizations */
+  @media (max-width: 768px) {
+    html {
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-y: contain;
+    }
+
+    body {
+      -webkit-tap-highlight-color: transparent;
+      touch-action: pan-y;
+    }
+  }
+
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-padding-top: 80px;
+  }
+
+  /* Enhanced smooth scrolling for all scrollable containers */
+  * {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Prevent momentum scrolling issues on iOS */
+  @supports (-webkit-touch-callout: none) {
+    * {
+      -webkit-overflow-scrolling: touch;
+    }
   }
 }

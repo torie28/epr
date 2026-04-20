@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
 import StructuredData from "@/components/structured-data"
+import { SmoothScrollProvider } from "@/components/smooth-scroll-provider"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -74,12 +75,16 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-background">
+    <html lang="en" className="bg-background scroll-smooth">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+        <meta name="theme-color" content="hsl(var(--background))" />
         <StructuredData />
       </head>
       <body className={`font-sans antialiased`}>
-        {children}
+        <SmoothScrollProvider>
+          {children}
+        </SmoothScrollProvider>
         <Analytics />
       </body>
     </html>

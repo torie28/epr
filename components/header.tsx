@@ -46,16 +46,28 @@ export function Header() {
       {mobileMenuOpen && (
         <div className="absolute top-20 left-4 right-4 bg-background/90 backdrop-blur-md border rounded-2xl p-4 md:hidden z-50 shadow-lg">
           <nav className="flex flex-col gap-4">
-            <Link href="#modules" className="text-sm text-muted-foreground hover:text-foreground">
+            <Link
+              href="#modules"
+              className="text-sm text-muted-foreground hover:text-foreground"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               Modules
             </Link>
-            <Link href="#features" className="text-sm text-muted-foreground hover:text-foreground">
+            <Link
+              href="#features"
+              className="text-sm text-muted-foreground hover:text-foreground"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               Features
             </Link>
-            {/* <Link href="#pricing" className="text-sm text-muted-foreground hover:text-foreground">
+            {/* <Link href="#pricing" className="text-sm text-muted-foreground hover:text-foreground" onClick={() => setMobileMenuOpen(false)}>
               Pricing
             </Link> */}
-            <Link href="#contact" className="text-sm text-muted-foreground hover:text-foreground">
+            <Link
+              href="#contact"
+              className="text-sm text-muted-foreground hover:text-foreground"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               Contact
             </Link>
             <div className="flex gap-3 pt-2">
