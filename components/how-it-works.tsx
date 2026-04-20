@@ -69,7 +69,7 @@ export function HowItWorks() {
             Everything you need to<br />run your business
           </h2>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto leading-relaxed">
-            Six powerful modules working together seamlessly to give you complete control over your operations.
+            Six powerful modules and other more features working together seamlessly to give you complete control over your operations.
           </p>
         </div>
 

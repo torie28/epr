@@ -63,10 +63,10 @@ export function DashboardMockup() {
           <div className="mt-auto pt-8 border-t mt-8">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center">
-                <span className="text-accent-foreground text-xs font-medium">JD</span>
+                <span className="text-accent-foreground text-xs font-medium">TJ</span>
               </div>
               <div>
-                <div className="text-sm font-medium">Torie</div>
+                <div className="text-sm font-medium">Torie Joe</div>
                 <div className="text-xs text-muted-foreground">Admin</div>
               </div>
             </div>
