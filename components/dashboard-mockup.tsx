@@ -66,7 +66,7 @@ export function DashboardMockup() {
                 <span className="text-accent-foreground text-xs font-medium">JD</span>
               </div>
               <div>
-                <div className="text-sm font-medium">John Doe</div>
+                <div className="text-sm font-medium">Torie</div>
                 <div className="text-xs text-muted-foreground">Admin</div>
               </div>
             </div>
