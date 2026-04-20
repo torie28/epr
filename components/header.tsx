@@ -16,7 +16,7 @@ export function Header() {
       const scrollY = window.scrollY
       setScrolled(scrollY > 20)
 
-      // Always visible in hero section (top 200px of page)
+      // Always visible in hero section (top 200px of page) and when scrolling
       if (scrollY < 200) {
         setVisible(true)
         if (scrollTimeout) {
@@ -24,7 +24,7 @@ export function Header() {
           setScrollTimeout(null)
         }
       } else {
-        // Show on scroll, hide after delay when not in hero section
+        // Show on scroll, keep visible when scrolling
         setVisible(true)
 
         // Clear existing timeout
@@ -32,7 +32,7 @@ export function Header() {
           clearTimeout(scrollTimeout)
         }
 
-        // Set new timeout to hide header after scrolling stops
+        // Set new timeout to hide header after scrolling stops (only when not in hero section)
         const timeout = setTimeout(() => {
           setVisible(false)
         }, 1500) // Hide after 1.5 seconds of no scrolling
@@ -40,6 +40,9 @@ export function Header() {
         setScrollTimeout(timeout)
       }
     }
+
+    // Initialize visibility on mount - always visible on home page
+    setVisible(true)
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => {
