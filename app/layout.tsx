@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
 import StructuredData from "@/components/structured-data"
 import { SmoothScrollProvider } from "@/components/smooth-scroll-provider"
+import { ClientAnimationWrapper } from "@/components/client-animation-wrapper"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -82,9 +83,11 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body className={`font-sans antialiased`}>
-        <SmoothScrollProvider>
-          {children}
-        </SmoothScrollProvider>
+        <ClientAnimationWrapper>
+          <SmoothScrollProvider>
+            {children}
+          </SmoothScrollProvider>
+        </ClientAnimationWrapper>
         <Analytics />
       </body>
     </html>

@@ -1,3 +1,5 @@
+"use client"
+
 import {
   Calculator,
   ShoppingCart,
@@ -9,6 +11,7 @@ import {
   CheckCircle2
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useScrollAnimation } from "@/components/scroll-animation-provider"
 
 const modules = [
   {
@@ -50,12 +53,16 @@ const modules = [
 ]
 
 export function HowItWorks() {
+  const headerRef = useScrollAnimation<HTMLDivElement>({ delay: 0 })
+  const modulesGridRef = useScrollAnimation<HTMLDivElement>({ delay: 200 })
+  const featuresRef = useScrollAnimation<HTMLDivElement>({ delay: 400 })
+
   return (
     <section id="modules" className="py-24 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 text-sm border rounded-full mb-6 bg-card">
+        <div ref={headerRef} className="text-center mb-16">
+          <span className="inline-block px-4 py-1.5 text-sm border rounded-full mb-6 bg-card hover-lift">
             Comprehensive Modules
           </span>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-balance">
@@ -67,9 +74,9 @@ export function HowItWorks() {
         </div>
 
         {/* Modules grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div ref={modulesGridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {modules.map((module, index) => (
-            <div key={index} className="bg-card rounded-xl p-6 border hover:shadow-lg transition-shadow">
+            <div key={index} className={`bg-card rounded-xl p-6 border hover:shadow-lg transition-all duration-300 hover-lift hover:scale-105 animate-stagger-${(index % 4) + 1}`}>
               <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center mb-4">
                 <module.icon className="w-6 h-6 text-foreground" />
               </div>
@@ -90,7 +97,7 @@ export function HowItWorks() {
         </div>
 
         {/* Features section */}
-        <div id="features" className="pt-16">
+        <div ref={featuresRef} id="features" className="pt-16">
           <div className="grid md:grid-cols-2 gap-12 items-center mb-24">
             <div>
               <span className="inline-block px-3 py-1 text-xs border rounded-full mb-4 bg-card">
