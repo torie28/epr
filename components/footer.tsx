@@ -51,7 +51,7 @@ export function Footer() {
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-background/70 flex-shrink-0" />
                 <a
-                  href="mailto:mbatastore@gmail.com?subject=Inquiry from BabaERP Website"
+                  href="mailto:social@babaerp.com?subject=Inquiry from BabaERP Website"
                   className="text-background/70 hover:text-background transition-colors"
                 >
                   social@babaerp.com
