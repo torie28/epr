@@ -1,9 +1,9 @@
-import { 
-  Calculator, 
-  ShoppingCart, 
-  Package, 
-  UtensilsCrossed, 
-  CreditCard, 
+import {
+  Calculator,
+  ShoppingCart,
+  Package,
+  UtensilsCrossed,
+  CreditCard,
   BarChart3,
   ArrowRight,
   CheckCircle2
@@ -145,7 +145,7 @@ function IntegrationDiagram() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-foreground flex items-center justify-center z-10">
             <span className="text-background font-bold text-lg">B</span>
           </div>
-          
+
           {/* Orbiting modules */}
           {[Calculator, ShoppingCart, Package, UtensilsCrossed, CreditCard, BarChart3].map((Icon, i) => {
             const angle = (i * 60) * (Math.PI / 180)
@@ -164,7 +164,7 @@ function IntegrationDiagram() {
               </div>
             )
           })}
-          
+
           {/* Connection lines */}
           <svg className="absolute inset-0 w-full h-full" viewBox="0 0 192 192">
             <circle cx="96" cy="96" r="80" fill="none" stroke="currentColor" strokeWidth="1" className="text-border" strokeDasharray="4 4" />
