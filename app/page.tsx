@@ -15,6 +15,7 @@ export default function Home() {
       <FaqSection />
       <CtaSection />
       <Footer />
+      <WhatsAppWidget />
       
     </main>
   )
