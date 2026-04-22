@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next"
 import StructuredData from "@/components/structured-data"
 import { SmoothScrollProvider } from "@/components/smooth-scroll-provider"
 import { ClientAnimationWrapper } from "@/components/client-animation-wrapper"
+import GoogleAnalytics from "@/components/google-analytics"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -81,6 +82,18 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
         <meta name="theme-color" content="hsl(var(--background))" />
         <StructuredData />
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-NMYJVSGB5T"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-NMYJVSGB5T');
+            `,
+          }}
+        />
       </head>
       <body className={`font-sans antialiased`}>
         <ClientAnimationWrapper>
@@ -89,6 +102,9 @@ export default function RootLayout({
           </SmoothScrollProvider>
         </ClientAnimationWrapper>
         <Analytics />
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+        )}
       </body>
     </html>
   )
