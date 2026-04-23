@@ -11,7 +11,7 @@ export function CtaSection() {
           Ready to transform your business?
         </h2>
         <p className="text-muted-foreground mb-8 max-w-lg mx-auto leading-relaxed">
-          Join thousands of businesses that trust Babaerp to manage their operations. Start your free trial today. feel free to contact us for more information, and tell us about your wish module and feture request.
+          Join thousands of businesses that trust Babaerp to manage their operations. Start your free trial today. feel free to contact us for more information, and tell us about your wish module and future request.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           {/* <Button className="rounded-full bg-foreground text-background hover:bg-foreground/90 px-6 gap-2">
