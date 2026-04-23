@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, Clock, MapPin } from "lucide-react"
 
 export function Footer() {
@@ -7,8 +8,14 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-1">
-            <Link href="/" className="font-serif text-xl font-bold">
-              Babaerp
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/BabaERP LOGO no pro-02-01.png"
+                alt="Babaerp"
+                width={120}
+                height={40}
+                className="object-contain"
+              />
             </Link>
             <p className="mt-3 text-sm text-background/70 leading-normal">
               Complete ERP solution for businesses. Manage accounting, sales, purchases, restaurants, POS, and analytics in one platform.

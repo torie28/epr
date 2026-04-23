@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useState, useEffect } from "react"
@@ -55,8 +56,14 @@ export function Header() {
 
   return (
     <header className={`sticky top-4 z-50 mx-auto max-w-2xl py-3 px-6 flex items-center justify-between bg-background/80 backdrop-blur-md border rounded-full shadow-lg transition-all duration-300 ${scrolled ? 'shadow-xl bg-background/90' : ''} ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
-      <Link href="/" className="font-serif text-2xl font-medium tracking-tight">
-        Babaerp
+      <Link href="/" className="flex items-center">
+        <Image
+          src="/BabaERP LOGO2-01.png"
+          alt="Babaerp"
+          width={120}
+          height={40}
+          className="object-contain"
+        />
       </Link>
       <nav className="hidden md:flex items-center gap-8">
         <Link href="#modules" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
