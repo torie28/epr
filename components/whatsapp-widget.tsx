@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { MessageCircle, X, Send, Check } from "lucide-react"
+import { MessageCircle, X, Send, Check, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const modules = [
@@ -206,17 +206,41 @@ export function WhatsAppWidget() {
       {/* Floating Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20BD5A] text-white shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 ${isOpen ? "rotate-0" : ""
+        className={`w-14 h-14 rounded-full bg-black hover:bg-gray-800 shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 ${isOpen ? "rotate-0" : ""
           }`}
         aria-label="Open WhatsApp chat"
       >
-        {isOpen ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
+        {isOpen ? (
+          <X className="w-6 h-6 text-white" />
+        ) : (
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            className="text-white"
+          >
+            {/* Speech bubble outline */}
+            <path
+              d="M3 12C3 7.58172 6.58172 4 11 4C15.4183 4 19 7.58172 19 12C19 14.2218 18.0062 16.2063 16.4242 17.5278L17.5 21L14.5278 19.4242C13.4727 19.7886 12.3255 20 11.125 20C11.0834 20 11.0418 19.9998 11.0003 19.9994C6.58448 19.9917 3.00781 16.4133 3.00781 12H3Z"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              fill="none"
+            />
+            {/* First star */}
+            <path
+              d="M7 8L7.5 9.5L9 10L7.5 10.5L7 12L6.5 10.5L5 10L6.5 9.5L7 8Z"
+              fill="currentColor"
+            />
+            {/* Second star */}
+            <path
+              d="M14 11L14.5 12L15.5 12.5L14.5 13L14 14L13.5 13L12.5 12.5L13.5 12L14 11Z"
+              fill="currentColor"
+            />
+          </svg>
+        )}
       </button>
 
-      {/* Pulse animation when closed */}
-      {!isOpen && (
-        <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-25 pointer-events-none" />
-      )}
     </div>
   )
 }
