@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next"
 import StructuredData from "@/components/structured-data"
 import { SmoothScrollProvider } from "@/components/smooth-scroll-provider"
 import { ClientAnimationWrapper } from "@/components/client-animation-wrapper"
+import { PrivacyConsent } from "@/components/privacy-consent"
 import GoogleAnalytics from "@/components/google-analytics"
 import "./globals.css"
 
@@ -101,6 +102,7 @@ export default function RootLayout({
             {children}
           </SmoothScrollProvider>
         </ClientAnimationWrapper>
+        <PrivacyConsent />
         <Analytics />
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />

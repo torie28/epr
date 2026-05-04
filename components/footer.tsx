@@ -108,7 +108,7 @@ export function Footer() {
                 >
                   Terms of Service
                 </button>
-                <Link href="#" className="text-sm text-background/70 hover:text-background transition-colors">
+                <Link href="/privacy" className="text-sm text-background/70 hover:text-background transition-colors">
                   Privacy Policy
                 </Link>
               </div>
