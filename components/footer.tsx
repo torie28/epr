@@ -9,6 +9,24 @@ import { TermsDialog } from "@/components/terms-dialog"
 export function Footer() {
   const [termsDialogOpen, setTermsDialogOpen] = useState(false)
 
+  const handleEmailClick = () => {
+    const email = 'social@babaerp.com'
+    const subject = 'Inquiry from BabaERP Website'
+
+    // Check if the device is Android
+    const isAndroid = /Android/i.test(navigator.userAgent)
+
+    if (isAndroid) {
+      // For Android users, open Gmail app directly
+      const gmailIntent = `intent://mailto/${email}?subject=${encodeURIComponent(subject)}#Intent;scheme=mailto;package=com.google.android.gm;end`
+      window.location.href = gmailIntent
+    } else {
+      // For desktop and other devices, open Gmail web interface
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}`
+      window.open(gmailUrl, '_blank')
+    }
+  }
+
   return (
     <footer id="contact" className="py-12 px-4 bg-foreground text-background border-t border-background/20">
       <div className="max-w-7xl mx-auto">
@@ -63,12 +81,12 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-background/70 shrink-0" />
-                <a
-                  href="mailto:social@babaerp.com?subject=Inquiry from BabaERP Website"
-                  className="text-background/70 hover:text-background transition-colors"
+                <button
+                  onClick={handleEmailClick}
+                  className="text-background/70 hover:text-background transition-colors text-left"
                 >
                   social@babaerp.com
-                </a>
+                </button>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-background/70 shrink-0" />
