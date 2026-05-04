@@ -5,6 +5,7 @@ import StructuredData from "@/components/structured-data"
 import { SmoothScrollProvider } from "@/components/smooth-scroll-provider"
 import { ClientAnimationWrapper } from "@/components/client-animation-wrapper"
 import { PrivacyConsent } from "@/components/privacy-consent"
+import { WhatsAppWidget } from "@/components/whatsapp-widget"
 import GoogleAnalytics from "@/components/google-analytics"
 import "./globals.css"
 
@@ -103,6 +104,7 @@ export default function RootLayout({
           </SmoothScrollProvider>
         </ClientAnimationWrapper>
         <PrivacyConsent />
+        <WhatsAppWidget />
         <Analytics />
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />

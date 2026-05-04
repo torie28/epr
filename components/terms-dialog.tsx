@@ -153,7 +153,7 @@ export function TermsDialog({ open, onOpenChange }: TermsDialogProps) {
                 >
                   <button
                     onClick={() => toggleCategory(category.id)}
-                    className="w-full px-4 py-3 flex items-center justify-between hover:bg-accent/50 transition-colors"
+                    className="w-full px-4 py-3 flex items-center justify-between transition-colors"
                   >
                     <div className="flex items-center gap-3">
                       <Icon className="w-4 h-4 text-primary" />
@@ -174,7 +174,7 @@ export function TermsDialog({ open, onOpenChange }: TermsDialogProps) {
                             value={`${category.id}-${index}`}
                             className="border-border"
                           >
-                            <AccordionTrigger className="px-4 py-2 hover:no-underline hover:bg-accent/30">
+                            <AccordionTrigger className="px-4 py-2 hover:no-underline">
                               <span className="text-xs font-medium">{item.title}</span>
                             </AccordionTrigger>
                             <AccordionContent className="px-4 pb-3">

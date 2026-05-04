@@ -4,7 +4,6 @@ import { FaqSection } from "@/components/faq-section"
 import { CtaSection } from "@/components/cta-section"
 import { Footer } from "@/components/footer"
 import { Services } from "@/components/services"
-import { WhatsAppWidget } from "@/components/whatsapp-widget"
 
 export default function Home() {
   return (
@@ -15,8 +14,7 @@ export default function Home() {
       <FaqSection />
       <CtaSection />
       <Footer />
-      <WhatsAppWidget />
-      
+
     </main>
   )
 }

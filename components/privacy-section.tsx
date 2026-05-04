@@ -202,7 +202,7 @@ export function PrivacySection() {
             Privacy Policy
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Your privacy is fundamental to our business. This policy explains how we collect, 
+            Your privacy is fundamental to our business. This policy explains how we collect,
             use, and protect your data when you use BabaERP POS system.
           </p>
           <div className="mt-8 flex items-center justify-center gap-4 text-sm text-muted-foreground">
@@ -217,9 +217,9 @@ export function PrivacySection() {
         <div className="mb-12 p-6 bg-primary/5 rounded-lg border border-primary/20">
           <h3 className="text-lg font-semibold mb-3 text-primary">Our Privacy Commitment</h3>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            At BabaERP, we believe your data belongs to you. We are committed to protecting your privacy 
-            and maintaining the highest standards of data security. We collect only what's necessary to 
-            provide excellent service, never sell your business data, and always maintain full transparency 
+            At BabaERP, we believe your data belongs to you. We are committed to protecting your privacy
+            and maintaining the highest standards of data security. We collect only what's necessary to
+            provide excellent service, never sell your business data, and always maintain full transparency
             about our data practices.
           </p>
         </div>
@@ -236,7 +236,7 @@ export function PrivacySection() {
               >
                 <button
                   onClick={() => toggleCategory(category.id)}
-                  className="w-full px-6 py-4 flex items-center justify-between hover:bg-accent/50 transition-colors"
+                  className="w-full px-6 py-4 flex items-center justify-between transition-colors"
                 >
                   <div className="flex items-center gap-3">
                     <Icon className="w-5 h-5 text-primary" />
@@ -257,7 +257,7 @@ export function PrivacySection() {
                           value={`${category.id}-${index}`}
                           className="border-border"
                         >
-                          <AccordionTrigger className="px-6 py-3 hover:no-underline hover:bg-accent/30">
+                          <AccordionTrigger className="px-6 py-3 hover:no-underline">
                             <span className="text-sm font-medium">{item.title}</span>
                           </AccordionTrigger>
                           <AccordionContent className="px-6 pb-4">
@@ -301,19 +301,19 @@ export function PrivacySection() {
         <div className="mt-12 p-6 bg-primary/5 rounded-lg border border-primary/20">
           <h3 className="text-lg font-semibold mb-3 text-primary">Policy Updates</h3>
           <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-            We may update this privacy policy to reflect changes in our practices, legal requirements, 
-            or service offerings. We will notify you of significant changes via email and post the 
+            We may update this privacy policy to reflect changes in our practices, legal requirements,
+            or service offerings. We will notify you of significant changes via email and post the
             updated policy on our website.
           </p>
           <p className="text-sm text-muted-foreground">
-            <strong>Review Frequency:</strong> This policy is reviewed annually and updated as needed. 
+            <strong>Review Frequency:</strong> This policy is reviewed annually and updated as needed.
             Your continued use of our services after any changes constitutes acceptance of the updated policy.
           </p>
         </div>
 
         <div className="mt-8 text-center">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} BabaERP. All rights reserved. This privacy policy is part of our 
+            © {new Date().getFullYear()} BabaERP. All rights reserved. This privacy policy is part of our
             commitment to transparent and responsible data management.
           </p>
         </div>
