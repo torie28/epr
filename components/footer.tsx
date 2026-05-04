@@ -1,8 +1,14 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, Clock, MapPin } from "lucide-react"
+import { TermsDialog } from "@/components/terms-dialog"
 
 export function Footer() {
+  const [termsDialogOpen, setTermsDialogOpen] = useState(false)
+
   return (
     <footer id="contact" className="py-12 px-4 bg-foreground text-background border-t border-background/20">
       <div className="max-w-7xl mx-auto">
@@ -48,15 +54,15 @@ export function Footer() {
             <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider">Contact Info</h4>
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-background/70 flex-shrink-0" />
+                <MapPin className="w-4 h-4 text-background/70 shrink-0" />
                 <span className="text-background/70">Pangani Street,P.O.Box 14187 Arusha ,</span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-background/70 flex-shrink-0" />
+                <Phone className="w-4 h-4 text-background/70 shrink-0" />
                 <span className="text-background/70">+255 675 303 030</span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-background/70 flex-shrink-0" />
+                <Mail className="w-4 h-4 text-background/70 shrink-0" />
                 <a
                   href="mailto:social@babaerp.com?subject=Inquiry from BabaERP Website"
                   className="text-background/70 hover:text-background transition-colors"
@@ -65,7 +71,7 @@ export function Footer() {
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-background/70 flex-shrink-0" />
+                <Clock className="w-4 h-4 text-background/70 shrink-0" />
                 <span className="text-background/70">Mon-Fri: 8am-18hr, Sat: 8am-18hr</span>
               </div>
             </div>
@@ -93,12 +99,15 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
               <p className="text-sm text-background/70">
-                2026 Babaerp. All rights reserved.
+                {new Date().getFullYear()} Babaerp. All rights reserved.
               </p>
               <div className="flex gap-4">
-                <Link href="#" className="text-sm text-background/70 hover:text-background transition-colors">
+                <button
+                  onClick={() => setTermsDialogOpen(true)}
+                  className="text-sm text-background/70 hover:text-background transition-colors text-left"
+                >
                   Terms of Service
-                </Link>
+                </button>
                 <Link href="#" className="text-sm text-background/70 hover:text-background transition-colors">
                   Privacy Policy
                 </Link>
@@ -148,6 +157,8 @@ export function Footer() {
           </div>
         </div>
       </div>
+
+      <TermsDialog open={termsDialogOpen} onOpenChange={setTermsDialogOpen} />
     </footer>
   )
 }
